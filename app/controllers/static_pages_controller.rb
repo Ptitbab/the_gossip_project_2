@@ -19,4 +19,8 @@ class StaticPagesController < ApplicationController
     puts params
     @gossip = Gossip.find(params[:id])
   end
+
+  def author
+    @author = User.find(params[:id])
+  end
 end
