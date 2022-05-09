@@ -1,0 +1,7 @@
+<p>Bienvenue à The gossip project</p><br><br>
+
+<% @gossips.each do |gossip|%>
+<%= gossip.user.first_name%>
+<%= gossip.title%>
+<a href="<%= gossip_path(id: gossip.id) %>">Tous les détails croustillants</a><br><br>
+<%end%>
