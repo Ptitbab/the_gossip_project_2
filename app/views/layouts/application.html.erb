@@ -32,6 +32,9 @@
       </li>
       <a class="nav-link" href="<%= new_session_path %>">Login</a>
       </li>
+      <% if current_user %>
+      <%= button_to "Se deconnecter", session_path(session.id), method: :delete, class:"btn btn-dark" %>
+      <% end%>  
     </ul>
   </div>
 </nav>
