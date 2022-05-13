@@ -25,8 +25,8 @@ class GossipsController < ApplicationController
     end
 
     def create
-        anonymous = User.create(first_name: 'Anonyme', last_name: 'anonyme', city: City.first)
-        gossip = Gossip.create(gossip_params.merge(user: anonymous))
+        # anonymous = User.create(first_name: 'Anonyme', last_name: 'anonyme', city: City.first)
+        gossip = Gossip.create(gossip_params.merge(user: current_user))
         redirect_to gossip_path(gossip.id), notice: 'successfully created'
     end
 
