@@ -3,24 +3,15 @@ class StaticPagesController < ApplicationController
     @gossips = Gossip.all
   end
   
-  def contact
+  def show
+  end
+
+  def new
     
   end
 
-  def team
-    
-  end
 
-  def bonjour
-    @name = params[:name]
-  end
-
-  def gossip
-    puts params
-    @gossip = Gossip.find(params[:id])
-  end
-
-  def author
-    @author = User.find(params[:id])
+  def user
+    @user = User.find(params[:id])
   end
 end

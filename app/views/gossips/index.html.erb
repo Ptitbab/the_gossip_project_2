@@ -1,0 +1,15 @@
+<a href="<%= new_gossip_path %>" class="btn btn-success">Créer un nouvel article</a>
+
+<div class="d-inline-flex flex-row bd-highlight mb-3 flex-wrap">
+    <% @gossips.each do |gossip| %>
+        <div class="card bd-highlight m-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title"><%= gossip.title%></h5>
+                <p class="card-text"><%= gossip.content %></p>
+                <a href="<%= gossip_path(gossip.id) %>" class="btn btn-primary">Le gossip plus en détails</a>
+                <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-warning mt-1">Modifier le gossip</a>
+                <a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger mt-1" data-confirm="Etes-vous sûr?" data-method="DELETE">Supprimer le gossip</a>
+            </div>
+        </div>
+    <%end%>
+</div>

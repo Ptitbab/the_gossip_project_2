@@ -1,0 +1,11 @@
+<%= @gossip.user.try(:first_name)%><br><br>
+<%= @gossip.user.try(:last_name)%><br><br>
+<% if !@gossip.user.nil?%>
+    <a href="<%= user_path(@gossip.user.id) %>">En savoir plus sur l'auteur</a><br><br>
+<% end %>
+<%= @gossip.title%><br><br>
+<%= @gossip.content%><br><br>
+<%= @gossip.created_at%><br><br>
+<h2><%= @gossip.comments.count %> Commentaires</h2>
+<%= render @gossip.comments %>
+<%= render 'comments/form' %>

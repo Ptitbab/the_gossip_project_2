@@ -1,14 +1,2 @@
-<p>Bienvenue à The gossip project</p><br><br>
-
-<div class="d-inline-flex flex-row bd-highlight mb-3 flex-wrap">
-    <% @gossips.each do |gossip|%>
-        <div class="card bd-highlight m-2" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title"><%= gossip.title%></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%= gossip.user.first_name%></h6>
-            <p class="card-text"><%= gossip.content %></p>
-            <a href="<%= gossip_path(id: gossip.id) %>" class="btn btn-primary">Le gossip plus en détails</a>
-            </div>
-        </div><br><br>
-    <%end%>
-</div>
+<h1>The Team</h1>
+<p>Voila notre équipe Eva Laurent, Tahar Touil et Brian Variengien</p>
