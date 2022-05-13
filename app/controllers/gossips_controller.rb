@@ -27,7 +27,11 @@ class GossipsController < ApplicationController
     def create
         # anonymous = User.create(first_name: 'Anonyme', last_name: 'anonyme', city: City.first)
         gossip = Gossip.create(gossip_params.merge(user: current_user))
+        if gossip.save
         redirect_to gossip_path(gossip.id), notice: 'successfully created'
+        else
+            redirect_to new_gossip_path
+        end
     end
 
     def edit
