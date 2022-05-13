@@ -10,14 +10,18 @@ class GossipsController < ApplicationController
 
     def update
         @gossip = Gossip.find(params[:id])
+        if current_user
         @gossip.update(gossip_params)
         redirect_to gossips_path
+        end
     end
 
     def destroy
         @gossip = Gossip.find(params[:id])
-        @gossip.destroy
-        redirect_to gossips_path
+        if current_user
+            @gossip.destroy
+            redirect_to gossips_path
+        end
     end
 
     def new
